@@ -15,8 +15,8 @@ export const TeleSned = () => {
         //       description: des,
         //    },
         //   ],
-        const text = des
-        await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=mm
+        const textss = des
+        await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=${textss}
 `)
 
     }
