@@ -1,23 +1,23 @@
 import axios from 'axios';
+require('dotenv').config();
 
 
 export const TeleSned = () => {
 
     const Send = async (des) => {
-        const body = {
-          content: "Hacker",
-          tts: false,
-          color: "white",
-          embeds: [
-            {
-              title: "  2 مدونة زاجل ",
-              description: des,
-           },
-          ],
-    };
-            
-        await axios.post("https://discord.com/api/webhooks/1318990970519294004/Hzl6uJu85D2gLpdtbFMp-EheGuoJAdQRKR9WA85g41JoQM1umjxCikAFoivixRjADhJ5",body)
-             
+        // const body = {
+        //   content: "Hacker",
+        //   tts: false,
+        //   color: "white",
+        //   embeds: [
+        //     {
+        //       title: "  2 مدونة زاجل ",
+        //       description: des,
+        //    },
+        //   ],
+        const text = des
+        await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=${text}`)
+
     }
   return {
     Send,
