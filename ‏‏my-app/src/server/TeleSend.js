@@ -5,7 +5,7 @@ export const TeleSned = () => {
     const Send = async (des) => {
         try {
             
-            await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=${des}`);
+            await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHID}&text=${des}`);
             console.log("Message sent successfully!");
         } catch (error) {
             console.error("Error sending message:", error);
