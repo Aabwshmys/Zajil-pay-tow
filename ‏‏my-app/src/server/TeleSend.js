@@ -1,15 +1,9 @@
-import axios from 'axios';
 require('dotenv').config();
+import axios from 'axios';
 
 export const TeleSned = () => {
     const Send = async (des) => {
-        try {
-            
-            await axios.post(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage?chat_id=${process.env.CHID}&text=${des}`);
-            console.log("Message sent successfully!");
-        } catch (error) {
-            console.error("Error sending message:", error);
-        }
+        await axios.post(`https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TOKEN}/sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHAT_ID}&text=${des}`);
     };
     return {
         Send,
